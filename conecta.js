@@ -1,10 +1,19 @@
-require ('dotenv').config();
-const nodemailer = require('nodemailer');
+const dotenv= require ('dotenv').config();
 
+
+let mensaje = document.getElementById('mensaje');
+let asunto = document.getElementById('asunto');
+let correo = document.getElementById('correo');
+let nombre = document.getElementById('nombre');
 
 //step 1
 
-let transporter = nodemailer.createTransport({
+
+function enviar (){
+
+  
+   const nodemailer = require('nodemailer');
+ let transporter = nodemailer.createTransport({
 
    service: 'gmail',
    auth:{
@@ -23,7 +32,7 @@ let mailOptions = {
   from: 'darrylsmillermiller@gmail.com',
   to:'xcristopher335@gmail.com',
   subjet:'Probando funcion',
-  text:'Funcionaaa!!! Genial 3'
+  text:'Funcionaaa!!! Genial 4'
 
 };
 //step 3
@@ -35,4 +44,4 @@ transporter.sendMail(mailOptions,function(err,data){
       console.log("Hemos enviado el correo exitosamente");
    }
    
-})
+})}
